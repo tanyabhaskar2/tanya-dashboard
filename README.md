@@ -17,7 +17,14 @@ A finance dashboard built using Express and JavaScript to track income and expen
 - HTML, CSS, JavaScript
 - Chart.js
 
+
 ## How to Run
 
-```bash
-node server.js
+1. Install dependencies:
+   npm install
+
+2. Start the server:
+   node server.js
+
+3. Open in browser:
+   http://localhost:3000
