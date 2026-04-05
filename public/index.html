@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanya Dashboard 💸</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- 🔹 SIDEBAR -->
+  <div class="sidebar">
+ <h1 class="main-title">💸 Tanya Finance Dashboard</h1>
+  <p onclick="scrollToSection('top')">Dashboard</p>
+  <p onclick="scrollToSection('table')">Transactions</p>
+  <p onclick="scrollToSection('insights')">Insights</p>
+</div>
+
+  <!-- 🔹 MAIN CONTENT -->
+  <div class="main">
+
+    <!-- HEADER -->
+     <h1 id="top" class="main-title">💸 Tanya Finance Dashboard</h1>
+
+    <!-- SUMMARY CARDS -->
+    <div class="cards">
+      <div>Balance: ₹<span id="balance"></span></div>
+      <div>Income: ₹<span id="income"></span></div>
+      <div>Expenses: ₹<span id="expenses"></span></div>
+    </div>
+
+    <!-- ADD TRANSACTION -->
+    <h2 id="table">Transactions</h2>
+    <div class="form">
+      <input type="date" id="date">
+      <input type="number" id="amount" placeholder="Amount">
+      <input type="text" id="category" placeholder="Category">
+
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <button onclick="addTransaction()">Add</button>
+    </div>
+
+    <!-- FILTER + DARK MODE -->
+    <div class="controls">
+      <button onclick="setFilter('all')">All</button>
+      <button onclick="setFilter('income')">Income</button>
+      <button onclick="setFilter('expense')">Expense</button>
+      <button onclick="toggleDark()">🌙 Dark Mode</button>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts"></div>
+
+    <!-- TRANSACTIONS TABLE -->
+    <h2>Transactions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <!-- INSIGHTS -->
+    <h2 id="insights">Insights</h2>
+    <p id="insight"></p>
+
+  </div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
